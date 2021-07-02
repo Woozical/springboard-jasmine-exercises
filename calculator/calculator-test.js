@@ -22,6 +22,7 @@ it("should handle fringe and invalid inputs", function(){
   let errStr = 'Invalid input.\nTry again.';
   expect(calculateMonthlyPayment({amount:300,years:-12,rate:342})).toEqual(errStr);
   expect(calculateMonthlyPayment({})).toEqual(errStr);
+  expect(calculateMonthlyPayment()).toEqual(errStr);
   expect(calculateMonthlyPayment({amount:0, years:0, rate:0})).toEqual(errStr);
   expect(calculateMonthlyPayment({amount:'300',years:true,rate:0.3})).toEqual(errStr);
 });
