@@ -17,7 +17,6 @@ describe("Servers test (with setup and tear-down)", function() {
     serverNameInput.value = 'Dennis';
     submitServerInfo();
     expect(serverId).toEqual(2);
-    console.log(allServers);
     expect(allServers.server1.serverName).toEqual('Alice');
     expect(allServers.server2.serverName).toEqual('Dennis');
   });
