@@ -24,3 +24,22 @@ function appendTd(tr, value) {
 
   tr.append(newTd);
 }
+
+// creates a <td> element with a value of 'X', when clicked with delete the <tr> it belongs to
+function appendDeleteBtn(tr){
+  const btn = document.createElement('td');
+  btn.innerText = 'X';
+
+  btn.addEventListener('click', function(e){
+    if(e){
+      let tr = e.target.parentElement;
+      if (tr.tagName === 'TR') {
+        delete allServers[tr.id];
+        delete allPayments[tr.id];
+        tr.remove();
+      }
+    }
+  })
+
+  tr.append(btn);
+}
