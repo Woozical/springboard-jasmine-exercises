@@ -50,6 +50,16 @@ describe('Helper Function tests', function(){
         }
     })
 
+    //appendDeleteBtn
+    it('should append a <td> delete button', function(){
+        const testRow = document.createElement('tr');
+
+        appendDeleteBtn(testRow);
+    
+        expect(testRow.children.length).toBe(1);
+        expect(testRow.firstChild.innerHTML).toBe('X');
+    })
+
     afterEach(function(){
         // ...
         allPayments = {};
